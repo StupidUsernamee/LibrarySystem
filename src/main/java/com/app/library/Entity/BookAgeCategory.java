@@ -8,7 +8,7 @@ import lombok.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Book_ageCategory {
+public class BookAgeCategory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

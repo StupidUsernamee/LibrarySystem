@@ -42,7 +42,7 @@ public class Book {
     private Book_Kind kindOfBook;
 
     @ManyToOne
-    private Book_ageCategory ageCategory;
+    private BookAgeCategory ageCategory;
 
     @ManyToOne
     private Row row;
