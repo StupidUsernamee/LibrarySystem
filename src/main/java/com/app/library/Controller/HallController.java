@@ -110,7 +110,7 @@ public class HallController {
                 yield new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
             }
             default -> {
-                message = "Something went wrong!";
+                message = "An unexpected error occurred";
                 yield new ResponseEntity<>(message, HttpStatus.BAD_REQUEST);
             }
         };

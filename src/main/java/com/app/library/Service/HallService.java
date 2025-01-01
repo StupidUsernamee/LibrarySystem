@@ -2,7 +2,6 @@ package com.app.library.Service;
 
 
 import com.app.library.DTO.HallDTO;
-import com.app.library.Entity.Hall;
 
 import java.util.List;
 
