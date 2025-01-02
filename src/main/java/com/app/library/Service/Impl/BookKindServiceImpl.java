@@ -1,7 +1,6 @@
 package com.app.library.Service.Impl;
 
 import com.app.library.DTO.BookKindDTO;
-import com.app.library.DTO.GenreDTO;
 import com.app.library.Entity.BookKind;
 import com.app.library.Mapper.BookKindMapper;
 import com.app.library.Repository.BookKindRepository;
@@ -54,7 +53,11 @@ public class BookKindServiceImpl implements BookKindService {
 
     @Override
     public BookKindDTO updateBookKind(BookKindDTO bookKindDTO) {
-        BookKind bookKindToUpdate = bookKindRepository.findById(bookKindDTO.getId()).get();
+        Optional<BookKind> optionalBookKind = bookKindRepository.findById(bookKindDTO.getId());
+        if(optionalBookKind.isEmpty()) {
+            return null;
+        }
+        BookKind bookKindToUpdate = optionalBookKind.get();
         if(bookKindToUpdate.getIsDeleted()) {
             return null;
         }
