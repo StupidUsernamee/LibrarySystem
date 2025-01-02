@@ -8,7 +8,7 @@ import lombok.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Book_Kind {
+public class BookKind {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

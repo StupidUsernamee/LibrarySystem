@@ -39,7 +39,7 @@ public class Book {
     private Genre genre;
 
     @ManyToOne
-    private Book_Kind kindOfBook;
+    private BookKind kindOfBook;
 
     @ManyToOne
     private BookAgeCategory ageCategory;
