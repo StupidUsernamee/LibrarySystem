@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface BookKindService {
 
-    BookKindDTO addBookKind(BookKindDTO bookKindDTO);
+    BookKindDTO addBookKind(String bookKindTitle);
 
     BookKindDTO getBookKindById(Long id);
 

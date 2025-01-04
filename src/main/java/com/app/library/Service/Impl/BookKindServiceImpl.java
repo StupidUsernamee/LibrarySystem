@@ -19,10 +19,11 @@ public class BookKindServiceImpl implements BookKindService {
     private BookKindRepository bookKindRepository;
 
     @Override
-    public BookKindDTO addBookKind(BookKindDTO bookKindDTO) {
-        BookKind bookKind = BookKindMapper.mapToBookKindEntity(bookKindDTO);
-        BookKind SavedBookKind = bookKindRepository.save(bookKind);
-        return BookKindMapper.mapToBookKindDTO(SavedBookKind);
+    public BookKindDTO addBookKind(String bookKindTitle) {
+        BookKind bookKind = new BookKind();
+        bookKind.setTitle(bookKindTitle);
+        bookKindRepository.save(bookKind);
+        return BookKindMapper.mapToBookKindDTO(bookKind);
     }
 
     @Override
