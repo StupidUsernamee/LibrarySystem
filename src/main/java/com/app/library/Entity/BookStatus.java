@@ -1,6 +1,5 @@
 package com.app.library.Entity;
 
-
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -9,31 +8,31 @@ import lombok.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Author {
+/*
+    This class/entity may have some changes
+    and some relations to requested, borrowed
+    and reserved attributes.
+ */
+public class BookStatus {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
-    private String firstName;
+    private Boolean available = true;
 
     @Column(nullable = false)
-    private String lastName;
-
-    private String nationality;
+    private Boolean missing = false;
 
     @Column(nullable = false)
-    private String gender;
-
-    private String email;
-
-    private String phone;
-
-    private String address;
+    private Boolean borrowed = false;
 
     @Column(nullable = false)
-    private Boolean isTranslator = false;
+    private Boolean requested = false;
+
+    @Column(nullable = false)
+    private Boolean reserved = false;
 
     @Column(nullable = false)
     private Boolean isDeleted = false;

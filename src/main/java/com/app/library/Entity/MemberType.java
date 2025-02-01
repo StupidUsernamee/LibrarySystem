@@ -8,27 +8,25 @@ import lombok.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Book_status {
+public class MemberType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
-    private Boolean available = true;
+    @Column(nullable = false, unique = true)
+    private String title;
 
     @Column(nullable = false)
-    private Boolean missing = false;
+    private Integer penaltyRate;
 
     @Column(nullable = false)
-    private Boolean borrowed = false;
+    private Integer maxBorrowCount;
 
     @Column(nullable = false)
-    private Boolean requested = false;
+    private Integer maxBorrowTime;
 
     @Column(nullable = false)
-    private Boolean reserved = false;
-
-    @Column(nullable = false)
-    private Boolean isDeleted = false;
+    private Boolean isDeleted;
 }
+

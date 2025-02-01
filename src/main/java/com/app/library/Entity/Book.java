@@ -20,11 +20,11 @@ public class Book {
     @Column(nullable = false)
     private String title;
 
-    @OneToMany
-    private List<Book_Author> authorBook; // TODO: Fix it later if turns out wrong
+    @ManyToOne
+    private Author author;
 
     @Column(nullable = false)
-    private String pageCount;
+    private Integer pageCount;
 
     @Column(nullable = false)
     private String publisher;
@@ -36,19 +36,23 @@ public class Book {
     private String language;
 
     @ManyToOne
+    @JoinColumn(nullable = false)
     private Genre genre;
 
     @ManyToOne
+    @JoinColumn(nullable = false)
     private BookKind kindOfBook;
 
     @ManyToOne
+    @JoinColumn(nullable = false)
     private BookAgeCategory ageCategory;
 
     @ManyToOne
+    @JoinColumn(nullable = false)
     private Row row;
 
     @Column(nullable = true)
-    private String commentId;
+    private String commentId;  // chane this to comment relation
 
     @Column(nullable = false)
     private Boolean isDeleted = false;
@@ -56,5 +60,11 @@ public class Book {
     @Column(nullable = false, unique = true)
     private Integer bookNumber;
 
+    @Column(nullable = false, unique = true)
+    private String bookCode;
+
+    @OneToOne
+    @JoinColumn(nullable = false)
+    private BookStatus bookStatus;
 
 }

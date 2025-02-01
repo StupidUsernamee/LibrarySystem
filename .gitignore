@@ -37,3 +37,5 @@ out/
 .vscode/
 
 src/test/*
+
+src/main/java/com/app/library/Utility/*

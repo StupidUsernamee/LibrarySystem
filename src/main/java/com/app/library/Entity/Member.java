@@ -1,7 +1,9 @@
 package com.app.library.Entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
@@ -17,7 +19,10 @@ public class Member {
     private Long id;
 
     @Column(nullable = false)
-    private String fullName;
+    private String firstName;
+
+    @Column(nullable = false)
+    private String lastName;
 
     @Column(nullable = false, unique = true, length = 10)
     private String nationalId;
@@ -36,8 +41,11 @@ public class Member {
     private Boolean gender;
 
     @ManyToOne
-    private Member_type member_type;
+    private MemberType member_type;
 
     @Column(nullable = false)
     private LocalDate joinDate;
+
+    @Column(nullable = false)
+    private Boolean isDeleted = false;
 }
